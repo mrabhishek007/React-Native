@@ -1,0 +1,33 @@
+* Points to remember:
+
+     1. Default display style is flex where flex-direction is column.
+
+     2. Working with images :
+
+        * Images will be imported using normal javascript es6 syntax or require('img path')
+        * static image:  ex : <Image  source={require('/react-native/img/favicon.png')}/> or first import the img then use it
+        * dynamic image : ex:  <Image style={{width: 50, height: 50}} source={{uri: 'https://facebook.github.io/react-native/docs/assets/favicon.png'}} />
+        * For dynamic image width and height must be explicitly provided
+
+     3. Property of btn : onPress = {} ( triggers onclick action )
+
+     4. Property of TextInput : onChangeText = {} [passes value of input field through argument]   , value = {}, autoFocus = {}, placeholder = {} ( triggers onclick action )
+
+
+
+
+ *  Using react native components such as 'StyleSheet, View, Text, FlatList, Modal, Button, TextInput'
+
+ *  Working with react native styles
+
+ *  Working with Touchable property like 'TouchableWithoutFeedback, TouchableHighlight, TouchableOpacity'
+     Working  : wrap any component ro implement this behaviour
+     EX : <TouchableHighlight> <Button color='black' title="Delete" onPress={props.onItemDeleted}/> </TouchableHighlight>
+
+ *  Using ScrollView
+
+ *  Using FlatView ( similar to ListView ) & handle key property
+
+ *  Using modals
+
+ *  Fetching the static image & Network Image

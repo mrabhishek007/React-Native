@@ -1,0 +1,8 @@
+create-react-native-app my-first-app (Using npm)
+
+react-native init helloWorld(using yarn)
+* After run 'react-native-start' > 'react-native run-android' or npm start
+
+* To simplify the build and install process, in package.json, add the following script under “scripts”:
+
+"android-windows": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res && react-native run-android"

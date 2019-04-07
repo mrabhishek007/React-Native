@@ -1,0 +1,51 @@
+  *   Add following lines in package.json script :
+
+       "shake": "adb shell input keyevent 82",
+       "reload": "adb shell input text 'RR' "
+
+     EX :  yarn/npm shake
+
+
+
+  * Debug react native on Chrome :
+       Open 'http://localhost:8081/debugger-ui/'
+
+
+  * Clear gradle issues :
+      1.npm  cache clean --force
+      2.react-native run-android
+
+
+
+
+
+   CREATE A NEW REACT-NATIVE PROJECT  ( RECOMMENDED WAY ) :
+
+* react-native init helloWorld (uses yarn)
+
+*  Fix for now : Just do as instructed below ---
+
+react-native v0.59.2 fixed this issue on iOS but still not working for android yet.
+Now you need to run 'react-native start' --reset-cache and 'react-native run-android' in two terminals.
+
+
+
+
+
+
+
+
+                // NOT REQUIRED
+
+
+* create an “assets” directory under android/app/src/main.
+   
+   ex : helloWorld\android\app\src\main\assets
+
+
+* To simplify the build and install process, in package.json, add the following script under “scripts”:
+   
+     "android-windows": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res && react-native run-android"
+
+
+* After run 'react-native-start' > 'react-native run-android' or npm start

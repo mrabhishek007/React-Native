@@ -1,0 +1,63 @@
+* Integrate redux in React-native:
+
+    1. Install 'redux' and 'react-redux' from npm
+    2. Create a store, reducers, actions etc.
+    3. At last wrap the 'App' component in index.js using 'Provider'
+        Ex :
+             const RNRedux = () => (
+                 <Provider store={store}>
+                         <App/>
+                    </Provider>
+              );
+
+    4. Now Register it like :
+         AppRegistry.registerComponent(appName, () => RNRedux);
+
+
+
+    5. Now go to respected component file where you want to use redux.
+           Here we are using in App.js and import 'connect' from redux
+
+       Now wrap up the component into connect and then export it
+
+       * Before exporting component define 2 constants which are following :
+           a > mapsStateToProps : contain required state of that property
+           b > mapsDispatchToProps : contains event handling methods  which  will handle dispatch to reducer and after that store will be updated
+
+       * export default connect(mapsStateToProps, mapsDispatchToProps)(App)
+
+
+* Debugging with JS
+
+   *  First enable 'Remote JS Debugging' in device menu
+   *  After that open 'http://localhost:8081/debugger-ui/'
+   *  Use console.log() in code and see the output in chrome console
+   *  Use sources tab and set breakpoints if you want
+
+   * Debugging using React-devs-tools -
+
+      1. Download the setup from github
+      2. To integrate this tools with redux Go to redux-store file and add following lines :
+
+         Ex :    let composeEnhancers = compose;
+                      if (__DEV__){
+                          composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+                      }
+                 const configureStore = () => {
+                    return createStore(rootReducers, composeEnhancers());
+                 };
+                 export default configureStore;
+
+       3. Stop 'Remote JS Debugging' if started and open exe file to start debugging
+
+* Adding icons in Android by adding dependencies.
+   EX : yarn add 'react-native-vector-icons'
+        Follow the github documentation for respected platform of further setup
+
+
+* Using 'react-native-navigation' in react-native
+   (Recomended to use android Studio for gradle edit)
+   Follow the github documentation for further details
+
+
+
